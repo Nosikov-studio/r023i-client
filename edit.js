@@ -42,7 +42,7 @@ let nameP;
 let ageP;
 if (FormDataObject.name) {nameP=FormDataObject.name;} else {nameP=nameParam;}
 if (FormDataObject.age) {ageP=FormDataObject.age;} else {ageP=ageParam;}
-
+console.log('Отправляемый _id:', _id);
   fetch('http://truruki.ru/api/edit', {
     method: 'POST',
     headers: {
