@@ -51,7 +51,7 @@ function list3() {
 fetch('http://truruki.ru/api')
     .then(response => response.json())
     .then(j => {
-      const html = j.map(item => `<li><a href="/edit.html?id=${item.id}&name=${item.name}&age=${item.age}">
+      const html = j.map(item => `<li><a href="/edit.html?_id=${item._id}&id=${item.id}&name=${item.name}&age=${item.age}">
         ${item.name}------${item.age} <a/>
             <button class="btn" id="${item.id}"> -delete- </button>
         </li>`).join('');
