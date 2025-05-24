@@ -5,7 +5,7 @@
   const nameParam = urlParams.get('name'); // получаем значение 
   const ageParam = urlParams.get('age'); // получаем значение 
   const idParam = Number(urlParams.get('id')); // получаем значение 
- 
+  const _id= Number(urlParams.get('_id')); // получаем значение
  // Находим форму по имени
   const form = document.forms['fmed'];
 
@@ -52,6 +52,7 @@ if (FormDataObject.age) {ageP=FormDataObject.age;} else {ageP=ageParam;}
       name: nameP,
       age: ageP,
       id: idParam,
+      _id: _id,
       views: 0,
     })
   })
