@@ -49,7 +49,7 @@ console.log('Отправляемый _id:', _id);
       'Content-Type': 'application/json',
       },
     body: JSON.stringify({
-      _id: _id,
+      _id: urlParams.get('_id'),
       name: nameP,
       age: ageP,      
       views: 0,
