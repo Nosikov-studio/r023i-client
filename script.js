@@ -67,7 +67,7 @@ event.preventDefault();
 console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
 console.log(event.target);
 console.log(event.target._id);
-fetch(`http://truruki.ru/delete/${Number(event.target._id)}`, {method: 'POST',})
+fetch(`http://truruki.ru/delete/${(event.target._id)}`, {method: 'POST',})
     .then(response => response.json())
     .then(j => {
       tb();  list3();
