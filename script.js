@@ -53,7 +53,7 @@ fetch('http://truruki.ru/api')
     .then(j => {
       const html = j.map(item => `<li><a href="/edit.html?_id=${item._id}&id=${item.id}&name=${item.name}&age=${item.age}">
         ${item.name}------${item.age} <a/>
-            <button class="btn" _id="${item._id}"> -delete- </button>
+            <button class="btn" data-id="${item._id}"> -delete- </button>
         </li>`).join('');
       r8.innerHTML =`<ul> ${html} </ul>`;
 
@@ -66,8 +66,16 @@ function handleClick(event) {
 event.preventDefault();
 console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
 console.log(event.target);
-console.log(event.target._id);
-fetch(`http://truruki.ru/delete/${Nomber(event.target._id)}`, {method: 'POST',})
+console.log(event.target.data-id);
+const id = event.target.dataset.id;  // Получаем id из data-id
+ if (!id) {
+    console.error('ID не найден у кнопки');
+    return;
+  }
+
+  console.log('Нажата кнопка с id:', id);
+
+fetch(`http://truruki.ru/delete/${id}`, {method: 'POST',})
     .then(response => response.json())
     .then(j => {
       tb();  list3();
