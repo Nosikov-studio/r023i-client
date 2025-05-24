@@ -49,10 +49,9 @@ if (FormDataObject.age) {ageP=FormDataObject.age;} else {ageP=ageParam;}
       'Content-Type': 'application/json',
       },
     body: JSON.stringify({
-      name: nameP,
-      age: ageP,
-      id: idParam,
       _id: _id,
+      name: nameP,
+      age: ageP,      
       views: 0,
     })
   })
