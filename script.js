@@ -66,7 +66,7 @@ function handleClick(event) {
 event.preventDefault();
 console.log('Нажата кнопка в элементе списка:', event.target.parentElement.textContent.trim());
 console.log(event.target);
-console.log(event.target.data-id);
+
 const id = event.target.dataset.id;  // Получаем id из data-id
  if (!id) {
     console.error('ID не найден у кнопки');
